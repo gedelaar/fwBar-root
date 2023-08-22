@@ -15,6 +15,8 @@ use CodeIgniter\Model;
 class TeamModel extends Model {
 
     public function getTeam(){
+        echo "*** hier1 ***"
+
         $options = [
             'teams' => 'https://data.sportlink.com/teams?client_id=L4dEA1bOHO',
             'timeout' => 3,
@@ -25,7 +27,10 @@ class TeamModel extends Model {
         // echo $response->header('Content-Type');
         $response2 = $client->request('GET', dot_array_search('teams', $options));
         // echo $response2->getBody();
-        return $response2;
+        //return $response2;
+        echo "*** hier2 ***"
+        echo $this->response->setJSON($response2);
+        return $this->response->setJSON($response2);
     }
 
     public function getTeamIndeling($team){

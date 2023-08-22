@@ -18,11 +18,13 @@ class Leden extends BaseController
     }
 
     public function getTeam(){
+        echo "*** hier3 ***"
+
         $model = model('App\Models\TeamModel');
         $json = $model->getTeam();
         // echo $json->getBody();
         // $obj = json_decode($json, TRUE);
-        print_r( $json);
+        //print_r( $json);
         foreach($json->getBody() as $team){
             print_r($team);
             foreach($team as $key=>$value){
