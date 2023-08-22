@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Controllers;
 
 class BaseBar extends BaseController
